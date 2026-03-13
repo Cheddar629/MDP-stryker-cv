@@ -16,5 +16,6 @@
 #SBATCH --partition=gpu
 #SBATCH --output=/home/%u/%x-%j.log
 
-
+source ~/miniconda3/etc/profile.d/conda.sh
+conda activate Stryker
 python yolo26_final.py
