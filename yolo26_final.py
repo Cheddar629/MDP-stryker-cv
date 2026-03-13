@@ -690,18 +690,13 @@ else:
 
 
 
+final_model = YOLO("yolo26n.pt")
 
+final_model.train(
+    data="d1d2_stratified/data.yaml",
+    epochs=100,
+    cfg="best_hyperparameters.yaml", 
+    project="runs/detect",
 
-best_model = YOLO("yolo26s.pt")
-best_model.train(
-    data="d1d2_aug_train_only/data.yaml",
-    epochs=50,
-    imgsz=640,
-    batch=16,
-    device=0,
-    project="yolo_runs",
-    name="final_yolo26s_tools",
 )
-
-
 
