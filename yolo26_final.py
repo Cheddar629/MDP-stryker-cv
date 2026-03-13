@@ -656,7 +656,7 @@ tune_results = model.tune(
     optimizer="SGD",
     workers=2,
     batch=16,
-    device='cpu',
+    device=0,
     project="runs/detect",
     name="runs/detect/tune_yolo26n_tools",
     plots=True,
@@ -698,7 +698,7 @@ best_model.train(
     epochs=50,
     imgsz=640,
     batch=16,
-    device='cpu',
+    device=0,
     project="yolo_runs",
     name="final_yolo26s_tools",
 )
