@@ -3,7 +3,7 @@ from pathlib import Path
 from ultralytics import YOLO
 
 # 1. Point to the correct runs/detect directory
-tune_dir = Path("runs/detect/tune_yolo26n_tools")
+tune_dir = Path("runs/detect/runs/detect/runs/detect/tune_yolo26n_tools")
 best_yaml = tune_dir / "best_hyperparameters.yaml"
 
 # 2. Check alternative nested folders just in case
