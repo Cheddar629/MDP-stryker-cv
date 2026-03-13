@@ -1,0 +1,17 @@
+# Ignore datasets
+*.zip
+datasets/
+d1d2_stratified/
+d1d2_aug_train_only/
+d1-unifyclass/
+d2-unifyclass/
+Surgical-Tools-1/
+Surgical-Tools-Dataset-2/
+d2-holdout-overlapping/
+
+
+# Ignore model weights and run logs
+*.pt
+runs/
+yolo_runs/
+__pycache__/

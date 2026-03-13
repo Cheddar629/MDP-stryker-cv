@@ -1,0 +1,17 @@
+# Core Data Science & Vision
+numpy
+pandas
+scikit-learn
+opencv-python
+
+# YOLO & Roboflow
+ultralytics
+roboflow
+pyyaml
+
+# Image Augmentation
+albumentations
+
+# Utility (Downloading & Progress Bars)
+gdown
+tqdm
