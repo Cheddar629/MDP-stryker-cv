@@ -11,7 +11,7 @@ d2-holdout-overlapping/
 
 
 # Ignore model weights and run logs
-*.pt
-runs/
-yolo_runs/
-__pycache__/
+# *.pt
+# runs/
+# yolo_runs/
+# __pycache__/
