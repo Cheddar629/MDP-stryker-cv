@@ -8,6 +8,7 @@ d2-unifyclass/
 Surgical-Tools-1/
 Surgical-Tools-Dataset-2/
 d2-holdout-overlapping/
+script.sh
 
 
 # Ignore model weights and run logs
