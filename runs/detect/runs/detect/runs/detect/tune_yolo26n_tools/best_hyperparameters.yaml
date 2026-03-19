@@ -1,0 +1,30 @@
+# 30/30 iterations complete ✅ (19204.54s)
+# Results saved to /home/yfran/MDP-stryker-cv/runs/detect/runs/detect/runs/detect/tune_yolo26n_tools
+# Best fitness=0.34351 observed at iteration 23
+# Best fitness metrics are {'metrics/precision(B)': 0.39045, 'metrics/recall(B)': 0.37077, 'metrics/mAP50(B)': 0.3811, 'metrics/mAP50-95(B)': 0.34351, 'val/box_loss': 1.28619, 'val/cls_loss': 4.18007, 'val/dfl_loss': 0.06304, 'fitness': 0.34351}
+# Best fitness model is /home/yfran/MDP-stryker-cv/runs/detect/runs/detect/train
+lr0: 0.00847
+lrf: 0.02816
+momentum: 0.98
+weight_decay: 0.00033
+warmup_epochs: 2.94555
+warmup_momentum: 0.93389
+box: 7.64415
+cls: 0.67119
+dfl: 2.71274
+hsv_h: 0.01523
+hsv_s: 0.58217
+hsv_v: 0.44897
+degrees: 0.00393
+translate: 0.10257
+scale: 0.45778
+shear: 0.003
+perspective: 0.0
+flipud: 0.00126
+fliplr: 0.49204
+bgr: 0.01316
+mosaic: 0.78248
+mixup: 0.00059
+cutmix: 1.0e-05
+copy_paste: 0.01145
+close_mosaic: 9
