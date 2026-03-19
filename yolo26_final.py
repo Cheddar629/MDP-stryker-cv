@@ -20,9 +20,6 @@ dataset2 = version.download("yolo26")
 path2 = dataset2.location
 
 
-
-
-
 from pathlib import Path
 import yaml, shutil
 from collections import Counter
@@ -641,24 +638,23 @@ DATA_YAML = Path("d1d2_stratified/data.yaml")
 
 assert DATA_YAML.exists(), f"Missing data.yaml: {DATA_YAML}"
 
-model = YOLO("yolo26n.pt")
+model = YOLO("yolo26s.pt")
 
 start = time.time()
 
 
 tune_results = model.tune(
     data=str(DATA_YAML),
-    epochs=15,
+    epochs=40,
     iterations=30,
     imgsz=640,
-    fraction=0.5,
-    patience=5,
-    optimizer="SGD",
+    patience=15,
+    optimizer="auto",
     workers=2,
     batch=16,
     device=0,
-    project="runs/detect",
-    name="runs/detect/tune_yolo26n_tools",
+    project="tuning_results",
+    name="tune_yolo26s_results",
     plots=True,
     save=True,
     val=True,
@@ -667,36 +663,36 @@ tune_results = model.tune(
 
 elapsed_min = (time.time() - start) / 60
 print(f"Tuning finished in {elapsed_min:.1f} minutes")
-print("Results saved under: /content/runs/detect/tune_yolo26n_tools")
+print("Results saved under: /tuning_results/tune_yolo26s_results")
 
-import shutil
+# import shutil
 
-# This is where YOLO automatically puts the file based on your project/name
-tune_dir = Path("tune_yolo26n_tools")
-best_yaml = tune_dir / "best_hyperparameters.yaml"
+# # This is where YOLO automatically puts the file based on your project/name
+# tune_dir = Path("tune_yolo26n_tools")
+# best_yaml = tune_dir / "best_hyperparameters.yaml"
 
-# Sometimes YOLO nests it in an extra 'tune' folder depending on the version
-if not best_yaml.exists():
-    best_yaml = tune_dir / "tune" / "best_hyperparameters.yaml"
+# # Sometimes YOLO nests it in an extra 'tune' folder depending on the version
+# if not best_yaml.exists():
+#     best_yaml = tune_dir / "tune" / "best_hyperparameters.yaml"
 
-if best_yaml.exists():
-    print(f"\n✅ SUCCESS: The best hyperparameters were automatically saved at:\n{best_yaml}")
+# if best_yaml.exists():
+#     print(f"\n✅ SUCCESS: The best hyperparameters were automatically saved at:\n{best_yaml}")
     
-    # Optional: Copy it to your current working directory so it's easier to find!
-    shutil.copy(best_yaml, "best_hyperparameters.yaml")
-    print("📂 A copy has been saved to your current folder as 'best_hyperparameters.yaml'")
-else:
-    print("❌ Could not find best_hyperparameters.yaml. Tuning may have been interrupted.")
+#     # Optional: Copy it to your current working directory so it's easier to find!
+#     shutil.copy(best_yaml, "best_hyperparameters.yaml")
+#     print("📂 A copy has been saved to your current folder as 'best_hyperparameters.yaml'")
+# else:
+#     print("❌ Could not find best_hyperparameters.yaml. Tuning may have been interrupted.")
 
 
 
-final_model = YOLO("yolo26n.pt")
+# final_model = YOLO("yolo26n.pt")
 
-final_model.train(
-    data="d1d2_stratified/data.yaml",
-    epochs=100,
-    cfg="best_hyperparameters.yaml", 
-    project="runs/detect",
+# final_model.train(
+#     data="d1d2_stratified/data.yaml",
+#     epochs=100,
+#     cfg="best_hyperparameters.yaml", 
+#     project="runs/detect",
 
-)
+# )
 
