@@ -6,7 +6,7 @@ from ultralytics import YOLO
 # 1. Locate your new weights
 # NOTE: YOLO usually saves the first training run to 'runs/detect/train/weights/best.pt'. 
 # If you ran training multiple times, it might be train2, train3, etc.
-weights_path = Path("runs/detect/runs/detect/train/weights/best.pt")
+weights_path = Path("runs/detect/training/train2/weights/best.pt")
 
 if not weights_path.exists():
     print(f"❌ Could not find weights at {weights_path}.")
@@ -55,11 +55,11 @@ if all_test_images:
         source=sample_images,
         save=True,      # Automatically draws and saves images with bounding boxes
         conf=0.25,      # Ignore predictions with less than 25% confidence
-        project="runs/detect",
+        project="testing_results",
         name="test_predictions" # Saves to runs/detect/test_predictions
     )
     
     print("\n✅ Visual predictions successfully saved!")
-    print("Check the 'runs/detect/test_predictions' folder to view the drawn bounding boxes.")
+    print("Check the 'testing_results/test_predictions' folder to view the drawn bounding boxes.")
 else:
     print(f"❌ Could not find any test images in {test_images_dir}")
