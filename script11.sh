@@ -18,4 +18,4 @@
 
 source ~/miniconda3/etc/profile.d/conda.sh
 conda activate stryker-vision
-time python yolo26_final_kayley.py
+time python yolo26_final_kayley_train_11.py
