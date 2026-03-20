@@ -16,3 +16,5 @@ script.sh
 # runs/
 # yolo_runs/
 # __pycache__/
+
+runs/detect/amy_runs/*
