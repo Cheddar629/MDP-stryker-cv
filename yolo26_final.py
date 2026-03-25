@@ -634,7 +634,7 @@ import time
 
 # can use the non-augmented set first for cleaner signal, or swap to the augmented one if you prefer.
 # DATA_YAML = Path("/content/d1d2_aug_train_only/data.yaml")
-DATA_YAML = Path("d1d2_stratified/data.yaml")
+DATA_YAML = Path("d1d2_aug_train/data.yaml")
 
 assert DATA_YAML.exists(), f"Missing data.yaml: {DATA_YAML}"
 
@@ -645,7 +645,7 @@ start = time.time()
 
 tune_results = model.tune(
     data=str(DATA_YAML),
-    epochs=40,
+    epochs=20,
     iterations=30,
     imgsz=640,
     patience=15,
