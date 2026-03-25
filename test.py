@@ -6,7 +6,7 @@ from pathlib import Path
 from ultralytics import YOLO
 
 # 1. Locate your new weights
-weights_path = Path("runs/detect/training/train2/weights/best.pt")
+weights_path = Path("best_test.pt")
 
 if not weights_path.exists():
     print(f"❌ Could not find weights at {weights_path}.")
