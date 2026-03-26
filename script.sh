@@ -18,5 +18,6 @@
 
 source ~/miniconda3/etc/profile.d/conda.sh
 conda activate Stryker
+python yolo26_final.py
 python test.py
 
